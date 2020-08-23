@@ -1,0 +1,40 @@
+<div class="container mt-5"> 
+    <br>
+    <br>
+    <br>
+<div class="row">
+    <div class="col-lg-5">
+        <img [src]="urlImage" alt="" width="300px" height="300px">
+    </div>
+    <div class="col-lg-6">
+        <input type="text"  [(ngModel)]="ciudad" placeholder="Nombre de ciudad" class="form-control form-cotrol-lg mt-4 text-center">
+        <button type="button" class="bn btn-primary btn-block btn-lg mt-4"
+         (click) = "getWeather()" [disabled] = "ciudad==''">Obtener clima</button>
+        <br>
+        
+        <div class="card">
+            <div class = "card-title mt-5 text-center text-muted"
+            ><p>¡Esperemos que sea un buen día!</p></div>
+            
+            <div class="card-body" [@openClose]="query ? 'open' : 'closed'">
+                
+
+                <!-- lo que está al lado de temperatura es un pipe. Es para decir que
+                muestre solo 1 o como max 2 caracteres antes de la coma (1.2) y lo que después 
+                viene es para que luego de la coma solo hayan 2 decimales -->
+                <p><b>Temperatura: </b>{{temperatura | number: '1.2-2'}} °C</p>
+                <p><b>Humedad: </b>{{humedad}} %</p>
+                <p><b>Clima: </b>{{clima}}</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-info float-lg-right btn-lg" (click)="gracias()">¡Tócame!</button>
+    </div>
+
+    
+    
+    
+</div>
+
+</div>

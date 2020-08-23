@@ -1,0 +1,9 @@
+.card, .form-control{
+    border-radius: 20px;
+    background-color:#FFFF99;
+    
+}
+
+p:hover{
+    color: orange;
+}
